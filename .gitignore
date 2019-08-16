@@ -1,0 +1,10 @@
+packages/
+*.suo
+*.cache
+/*/bin/
+/*/obj/
+/*/*/bin/
+/*/*/obj/
+*.orig
+.vs/
+bin
