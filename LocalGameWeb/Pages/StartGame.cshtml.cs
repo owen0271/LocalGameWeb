@@ -17,5 +17,12 @@ namespace LocalGameWeb.Pages
             string directory = Environment.CurrentDirectory;
             Message = String.Format("Your directory is {0}.", directory);
         }
+
+
+        public IActionResult StartGameBtn_OnClick()
+        {
+            
+            return null;
+        }
     }
 }

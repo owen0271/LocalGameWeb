@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using LocalGameWeb.Models;
+using GameWebApp.Models;
 
-namespace LocalGameWeb
+namespace GameWebApp
 {
     public class Startup
     {
@@ -34,10 +34,10 @@ namespace LocalGameWeb
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddDbContext<LocalGameWebContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("LocalGameWebContext")));
+            services.AddDbContext<GameWebAppContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("GameWebAppContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +50,7 @@ namespace LocalGameWeb
             else
             {
                 app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
